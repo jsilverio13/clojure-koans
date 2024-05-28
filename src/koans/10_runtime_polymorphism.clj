@@ -1,7 +1,6 @@
 (ns koans.10-runtime-polymorphism
   #_{:clj-kondo/ignore [:refer-all]}
-  (:require [clojure.pprint :refer [pprint]]
-            [koan-engine.core :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (defn hello
   ([] "Hello World!")
