@@ -1,4 +1,5 @@
 (ns koans.02-strings
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]
             [clojure.string :as string]))
 

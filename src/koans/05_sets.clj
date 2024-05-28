@@ -1,4 +1,5 @@
 (ns koans.05-sets
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]
             [clojure.set :as set]))
 

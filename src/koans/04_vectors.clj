@@ -1,4 +1,5 @@
 (ns koans.04-vectors
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]))
 
 (meditations

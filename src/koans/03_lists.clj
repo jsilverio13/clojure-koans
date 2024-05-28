@@ -1,4 +1,5 @@
 (ns koans.03-lists
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]))
 
 (meditations
@@ -35,11 +36,13 @@
  "But watch out if you try to pop nothing"
  (= "No dice!" (try
                  (pop '())
+                 #_{:clj-kondo/ignore [:unused-binding]}
                  (catch IllegalStateException e
                    "No dice!")))
 
  "The rest of nothing isn't so strict"
  (= '() (try
           (rest '())
+          #_{:clj-kondo/ignore [:unused-binding]}
           (catch IllegalStateException e
             "No dice!"))))

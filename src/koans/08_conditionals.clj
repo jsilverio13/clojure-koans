@@ -16,8 +16,9 @@
          :b))
 
  "Some of them leave you no alternative"
- (= [] (if (> 4 3)
-         []))
+ (= [] #_{:clj-kondo/ignore [:missing-else-branch]}
+    (if (> 4 3)
+      []))
 
  "And in such a situation you may have nothing"
  (= nil (if (nil? 0)
