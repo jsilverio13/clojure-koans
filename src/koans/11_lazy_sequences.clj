@@ -1,4 +1,5 @@
 (ns koans.11-lazy-sequences
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]))
 
 (meditations
