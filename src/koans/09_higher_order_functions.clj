@@ -13,10 +13,12 @@
  (=  '(false false true false false) (map nil? [:a :b nil :c :d]))
 
  "A filter can be strong"
- (= '() (filter (fn [x] false) '(:anything :goes :here)))
+ (= '() (filter #_{:clj-kondo/ignore [:unused-binding]}
+         (fn [x] false) '(:anything :goes :here)))
 
  "Or very weak"
- (= '(:anything :goes :here) (filter (fn [x] true) '(:anything :goes :here)))
+ (= '(:anything :goes :here) (filter #_{:clj-kondo/ignore [:unused-binding]}
+                              (fn [x] true) '(:anything :goes :here)))
 
  "Or somewhere in between"
  (= [10 20 30] (filter (fn [x] (< x 40)) [10 20 30 40 50 60 70 80]))

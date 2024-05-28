@@ -21,11 +21,13 @@
       []))
 
  "And in such a situation you may have nothing"
- (= nil (if (nil? 0)
-          [:a :b :c]))
+ (= nil #_{:clj-kondo/ignore [:missing-else-branch]}
+    (if (nil? 0)
+      [:a :b :c]))
 
  "In others your alternative may be interesting"
- (= :glory (if (not (empty? ()))
+ (= :glory (if #_{:clj-kondo/ignore [:not-empty?]}
+            (not (empty? ()))
              :doom
              :glory))
 
