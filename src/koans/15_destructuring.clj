@@ -30,7 +30,7 @@
  "You can regain the full argument if you like arguing"
  (= {:original-parts ["Stephen" "Hawking"] :named-parts {:first "Stephen" :last "Hawking"}}
     (let [[first-name last-name :as full-name] ["Stephen" "Hawking"]]
-      {:original-parts [first-name last-name] :named-parts {:first first-name :last last-name}}))
+      {:original-parts full-name :named-parts {:first first-name :last last-name}}))
 
  "Break up maps by keys"
  (= "123 Test Lane, Testerville, TX"

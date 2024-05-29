@@ -1,4 +1,5 @@
 (ns koans.16-refs
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]))
 
 (def the-world (ref "hello"))

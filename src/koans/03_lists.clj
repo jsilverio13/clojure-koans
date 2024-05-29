@@ -36,13 +36,11 @@
  "But watch out if you try to pop nothing"
  (= "No dice!" (try
                  (pop '())
-                 #_{:clj-kondo/ignore [:unused-binding]}
-                 (catch IllegalStateException e
+                 (catch IllegalStateException _
                    "No dice!")))
 
  "The rest of nothing isn't so strict"
  (= '() (try
           (rest '())
-          #_{:clj-kondo/ignore [:unused-binding]}
-          (catch IllegalStateException e
+          (catch IllegalStateException _
             "No dice!"))))
