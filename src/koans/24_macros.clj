@@ -8,6 +8,7 @@
 (defmacro infix [form]
   (list (second form) (first form) (nth form 2)))
 
+#_{:clj-kondo/ignore [:clojure-lsp/unused-public-var]}
 (defmacro infix-concise [form]
   `(~(second form) ; Note the syntax-quote (`) and unquote (~) characters!
     ~(first form)
@@ -44,4 +45,5 @@
  (= '(+ 10 (2 * 3)) (macroexpand '(infix-concise (10 + (2 * 3)))))
 
  "Really, you don't understand recursion until you understand recursion"
- (= 36 (recursive-infix (10 + (2 * 3) + (4 * 5)))))
+ (= 36 (recursive-infix #_{:clj-kondo/ignore [:not-a-function]}
+        (10 + (2 * 3) + (4 * 5)))))
