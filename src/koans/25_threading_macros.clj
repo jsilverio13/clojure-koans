@@ -1,4 +1,5 @@
 (ns koans.25-threading-macros
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]))
 
 (def a-list

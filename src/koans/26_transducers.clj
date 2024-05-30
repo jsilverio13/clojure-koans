@@ -1,4 +1,5 @@
 (ns koans.26-transducers
+  #_{:clj-kondo/ignore [:refer-all]}
   (:require [koan-engine.core :refer :all]))
 
 (def example-transducer
@@ -6,7 +7,7 @@
 
 (def transforms
   (comp (map inc)
-     (filter even?)))
+        (filter even?)))
 
 (meditations
  "A sequence operation with only one argument often returns a transducer"
