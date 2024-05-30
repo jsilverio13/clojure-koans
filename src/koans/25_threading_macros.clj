@@ -1,6 +1,7 @@
 (ns koans.25-threading-macros
   #_{:clj-kondo/ignore [:refer-all]}
-  (:require [koan-engine.core :refer :all]))
+  (:require [clojure.string :as string]
+            [koan-engine.core :refer :all]))
 
 (def a-list
   '(1 2 3 4 5))
@@ -29,7 +30,7 @@
  "When a function has no arguments to partially apply, just reference it"
  (= __
     (-> "String with a trailing space "
-        clojure.string/trim))
+        string/trim))
 
  "Most operations that take a scalar value as an argument can be threaded-first"
  (= __

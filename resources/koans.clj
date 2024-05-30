@@ -1,3 +1,5 @@
+#_{:clj-kondo/ignore [:unresolved-symbol]}
+
 [["01_equalities" {"__" [true
                          2
                          5
@@ -198,6 +200,7 @@
                     atomic-clock 20 :fin]}]
 
  ["18_quote" {"__" ['(1 2 3 4 5)
+                    #_{:clj-kondo/ignore [:not-a-function]}
                     (1 2 3 4 5)
                     'age
                     quote
@@ -228,6 +231,7 @@
                         '((0 1 2) (3 4))
                         5
                         :hello
+                        #_{:clj-kondo/ignore [:not-a-function]}
                         (6 :these :are)]}]
 
  ["22_group_by" {"__" [odd?
